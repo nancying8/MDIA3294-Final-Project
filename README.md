@@ -1,5 +1,7 @@
 MDIA3294-Final-Project
 
+It is a group project by Karleil, Sonya, Courtney and Nancy
+
 Our app, Adoptly, is an adoption app about cats and dogs. 
 This app was built on and an extension to:
 - Sonya’s Cat project
