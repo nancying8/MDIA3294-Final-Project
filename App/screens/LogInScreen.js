@@ -1,20 +1,37 @@
+// Import react, useState, useEffect from react
 import React, { useEffect, useState } from 'react';
+// Importing essential React Native components for StyleSheet, View, ImageBackground, ScrollView 
 import { StyleSheet, View, ImageBackground, ScrollView } from 'react-native';
+// Import Text, Button from @rneui/themed
 import { Button, Text } from '@rneui/themed';
+// Import useForm for form handling
 import { useForm } from "react-hook-form";
+// Yup for schema validation
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-
+// Custom input component to connect form fields to react-hook-form
 import TextInputControl from '../components/TextInputControl';
+
+// Custom login service (fake or real) that checks username/password
 import { authenticate } from '../services/LoginManager';
+// Custom hook for managing user state (context or global state)
 import { useUserState } from '../services/UserState';
+// Import global themePalette from AdoptlyTheme
 import { themePalette } from '../theme/AdoptlyTheme';
 
+// Validation schema for form using Yup
 const schema = yup.object({
   username: yup.string().trim().required("required"),
   password: yup.string().trim().required("required")
 });
 
+// Log in
+// use userState could access global user state
+// loginError > // Error flag for invalid login
+// React Hook Form setup with default values and validation
+// Defatul values is a sample default for usernamr and password
+// Using the useEffect.clearUser will clear user session on mount
+//  authenticate(data) will validate login credentials
 export default function LogInScreen({ navigation }) {
   const userState = useUserState();
   const [loginError, setLoginError] = useState(false);

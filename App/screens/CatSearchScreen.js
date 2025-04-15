@@ -1,8 +1,8 @@
 // Import react, useState, useEffect from react
 import React, { useState, useEffect } from 'react';
-// Import StyleSheet, View, ActivityIndicator, FlatList, TouchableOpacity from react-native
+// Importing essential React Native components for layout, lists, images, and user interaction
 import { StyleSheet, View, ActivityIndicator, FlatList, TouchableOpacity } from 'react-native';
-// Import Text, Avatar, Divider, SearchBar from @rneui/themed
+// Importing themed UI components from React Native Elements
 import { Text, Avatar, Divider, SearchBar } from '@rneui/themed';
 // Import useNavigation from @react-navigation/native
 import { useNavigation } from '@react-navigation/native';

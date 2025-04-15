@@ -1,9 +1,22 @@
+// Import react, useState, useEffect from react
 import { useState, useEffect } from "react";
+// Importing essential React Native components 
 import { StyleSheet, View, ActivityIndicator, ScrollView, Text, Image, TouchableOpacity, Alert, Platform, ToastAndroid } from 'react-native';
+// Importing themed UI components from React Native Elements
 import { Divider, Icon } from '@rneui/themed';
+// importing  UI components
 import Collapsible from 'react-native-collapsible';
+// Custom adoption context to manage favorite cats
 import { useAdoption } from '../components/AdoptionContext';
 
+// dog Detail
+// dog detail screen showing more information and adoption toggle
+// route.params > get selected cat from route params
+// const isLoaded and loadingDelay is manage loading states
+// const section is maanage collapsible section states for accordion UI
+// Toggle individual section visibility
+// showToast is show the feedback message via Toast (Android) or Alert (iOS)
+// toggleAdoption will add or remove a cat from adoption list
 export default function DogDetailScreen({ route, navigation }) {
     const { dog } = route.params;
     const [isLoaded, setIsLoaded] = useState(true);

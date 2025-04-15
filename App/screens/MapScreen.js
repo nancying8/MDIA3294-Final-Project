@@ -1,7 +1,12 @@
+// Import react, useState,  from react
 import React, { useState } from 'react';
+// Importing essential React Native components for View, StyleSheet, Dimensions, TouchableOpacity, Text
 import { View, StyleSheet, Dimensions, TouchableOpacity, Text } from 'react-native';
+// Interactive map using react-native-maps
 import MapView, { Marker } from 'react-native-maps';
 
+// each adress has the corresponde latitude and longtitude 
+// the set of latitude with lngitude will givbe the exactitud of location on the map
 const adoptionAgencies = [
   {
     name: 'Adoptly Vancouver',
@@ -26,6 +31,8 @@ const adoptionAgencies = [
   },
 ];
 
+// when the map open is set up to the location of area within Vancouver, Burnaby and Richmond 
+// adding zoom in by dividing the delta of latitude and longitude
 export default function MapScreen() {
   const [region, setRegion] = useState({
     latitude: 49.22,
@@ -50,6 +57,13 @@ export default function MapScreen() {
     }));
   };
 
+// MapScreen Component
+//  Displays a map with markers for various Adoptly adoption agency locations.
+//  Centers the map around the Greater Vancouver area.
+// Users can zoom in and out using buttons.
+// Each agency is marked with name and address as a marker.
+// Zoom controls to adjust map view
+// Static data for demonstration with agency details and coordinates
   return (
     <View style={styles.container}>
       <MapView
