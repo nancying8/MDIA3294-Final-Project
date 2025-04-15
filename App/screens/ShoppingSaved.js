@@ -1,10 +1,24 @@
+// Import react, useState, useEffect from react
 import React, { useEffect, useState } from 'react';
+// Importing essential React Native components for layout, lists, images, and user interaction
 import { View, FlatList, Image, StyleSheet, TouchableOpacity } from 'react-native';
+// Importing themed UI components from React Native Elements
 import { Text, Icon, Button } from '@rneui/themed';
-import { Ionicons } from '@expo/vector-icons';
+// Importing AsyncStorage for local data persistence
 import AsyncStorage from '@react-native-async-storage/async-storage';
+// Importing navigation hook to enable screen navigation
 import { useNavigation } from '@react-navigation/native';
 
+// SjhoppingSaved
+// ShoppingSaved component for displaying and managing saved shopping cart items
+// State to store items in the shopping cart
+// navigation - hook to enable navigation between screens
+// Load cart items from AsyncStorage when the component mounts
+// Function to load cart items from AsyncStorage
+// ParseCart will update state with loaded items
+// Function to delete an item from the cart based on its index
+// Filter out the item to delete
+// Save updated cart to AsyncStorage
 export default function ShoppingSaved() {
   const [cartItems, setCartItems] = useState([]);
   const navigation = useNavigation();

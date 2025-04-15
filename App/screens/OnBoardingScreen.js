@@ -1,8 +1,15 @@
+// Import react from react
 import React from 'react';
+// Importing essential React Native components for View, StyleSheet, ImageBackground
 import { View, StyleSheet, ImageBackground } from 'react-native';
+// Importing themed UI components from React Native Elements
 import { Button, Text } from '@rneui/themed';
-
+//  Importing images to the background of the screem
 const background = require('../assets/background.jpg');
+
+// Onboarding screen component for the Adoptly app
+// Background image that fills the whole screen
+// Add the button to navigate to the next screen >Log in
 
 export default OnboardingScreen = ({ navigation }) => {
     return (

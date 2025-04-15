@@ -4,7 +4,7 @@ import React from 'react';
 import { StyleSheet, View, Image, TouchableOpacity, ImageBackground } from 'react-native';
 // global styles from themed
 import { Text } from '@rneui/themed';
-
+//  Import icon from MaterialCommunityIcons
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const background = require('../assets/kitty.jpeg');

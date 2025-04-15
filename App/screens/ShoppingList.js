@@ -1,11 +1,26 @@
+// Import react, useState, useEffect from react
 import React, { useState, useEffect } from 'react';
+// Importing essential React Native components for View, FlatList, StyleSheet, TouchableOpacity, Image, Alert
 import { View, FlatList, StyleSheet, TouchableOpacity, Image, Alert } from 'react-native';
-import { Text, Button, Icon } from '@rneui/themed';
+// Importing themed UI components from React Native Elements
+import { Text, Icon } from '@rneui/themed';
+// Importing Ionicons for cart icon
 import { Ionicons } from '@expo/vector-icons';
+// Importing navigation hook to enable screen navigation
 import { useNavigation } from '@react-navigation/native';
+// Importing AsyncStorage for local data persistence
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
+// Importing ShoppingList
+// State to store fetched items
+// State to track number of items in the cart
+// Navigation object from React Navigation
+// Load cart count and fetch items when the screen is focused
+// Listener for screen focus to refresh cart count
+// Fetch item list from backend
+// Cleanup the focus listener when component unmounts
+// reload cart count when screen is focused
+// return unsubscribe >  will clean up the listener
 export default function ShoppingList() {
   const [items, setItems] = useState([]);
   const navigation = useNavigation();
@@ -13,7 +28,7 @@ export default function ShoppingList() {
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
-      loadCartCount(); // reload cart count when screen is focused
+      loadCartCount(); 
     });
   
     fetch('http://10.0.2.2:3000/items')
@@ -21,9 +36,9 @@ export default function ShoppingList() {
       .then(data => setItems(data))
       .catch(error => console.error('Error fetching items:', error));
   
-    loadCartCount(); // initial load
+    loadCartCount();
   
-    return unsubscribe; // clean up the listener
+    return unsubscribe; 
   }, [navigation]);
 
   const loadCartCount = async () => {
@@ -43,7 +58,7 @@ export default function ShoppingList() {
       const parsedCart = cartItems ? JSON.parse(cartItems) : [];
       const updatedCart = [...parsedCart, item];
       await AsyncStorage.setItem('cart', JSON.stringify(updatedCart));
-      setCartCount(updatedCart.length); // ✅ update count
+      setCartCount(updatedCart.length);  
       console.log(`Added to cart: ${item.name}`);
       
       Alert.alert(
