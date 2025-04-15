@@ -22,7 +22,7 @@ Instructions:
   - cd api
   - npm install
 4 - In a new terminal (on your computer), run:
-  - cd [your project folder]
+  - cd [this project folder]
   - cd App
   - npm install
   - npm run android
